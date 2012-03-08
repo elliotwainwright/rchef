@@ -1,0 +1,15 @@
+<h1><%=h @recipe.title %>
+  <span id="vote_score">Score: <%= @recipe.votes.size %></span>
+</h1>
+<p><%= link_to "&#171; Back to recipes", recipes_path %></p>
+<p>Chef: J Finlay</p>
+<p>The method for this recipe is:</p>
+<p><%=h @recipe.method %><p>
+
+<div id="vote_form">
+  <% form_remote_tag :url => recipe_votes_path(@recipe) do %>
+    <%= submit_tag 'Vote for Recipe' %>
+  <% end %>
+</div>
+
+<p><%= link_to "Edit recipe", edit_recipe_path %> | <%= link_to "Delete recipe", @recipe, :confirm => "Sure?", :method => :delete %></p>

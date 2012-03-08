@@ -1,0 +1,2 @@
+page.replace_html 'vote_score', "Score: #{@recipe.votes.size}"
+page.visual_effect :highlight, 'vote_score'

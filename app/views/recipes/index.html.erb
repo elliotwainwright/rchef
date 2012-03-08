@@ -1,0 +1,10 @@
+<h1>All Recipes in RailsChef!</h1>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.title, recipe %> </li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Create new recipe", new_recipe_path %>
+</p>
